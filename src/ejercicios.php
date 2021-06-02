@@ -20,3 +20,7 @@ function sumArray2(array $array): int {
 
     return $sum;
 }
+
+function sumArray3(array $array): int {
+    return array_sum($array);
+}

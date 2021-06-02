@@ -14,5 +14,6 @@ final class EjercicioSumArrayTest extends TestCase
     $input = [3, 6, 1, -5, 0, 4];
     assertEquals(9, sumArray($input));
     assertEquals(9, sumArray2($input));
+    assertEquals(9, sumArray3($input));
   }
 }
