@@ -50,3 +50,8 @@ function averageAge(array $array): float {
     $average = $sum / sizeof($array);
     return $average;
 }
+
+function averageAge2(array $array): float {
+
+    return array_sum(array_column($array, 'age'))/count($array);
+}
