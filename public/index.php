@@ -8,8 +8,40 @@
 </head>
 <body>
     <h1>Hola Luis</h1>
-    <p>Hoy es <strong><?php print_r(getdate()['wday']) ?></strong>. ¿Qué tal estás?</strong></p>
+    <p>Hoy es <strong><?php setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish'); echo strftime("%A"); ?></strong>. ¿Qué tal estás?</strong></p>
 </body>
 </html>
 
 
+<!-- 
+<?php  
+
+$wdayNumber = getdate()['wday'];
+
+switch($wdayNumber){
+    case (0):
+        $wdayText = "domingo";
+        break;
+    case (1):
+        $wdayText = "lunes";
+        break;
+    case (2):
+        $wdayText = "martes";
+        break;
+    case (3):
+        $wdayText = "miércoles";
+        break;
+    case (4):
+        $wdayText = "jueves";
+        break;
+    case (5):
+        $wdayText = "viernes";
+        break;
+    case (6):
+        $wdayText = "sábado";
+        break;                  
+}
+
+print_r($wdayText);
+?>
+ -->
