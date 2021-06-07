@@ -7,41 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola Luis</h1>
-    <p>Hoy es <strong><?php setlocale(LC_TIME, 'es_ES', 'Spanish_Spain', 'Spanish'); echo strftime("%A"); ?></strong>. ¿Qué tal estás?</strong></p>
+
+    <?php
+    $weeekDays = [
+        1 => 'lunes',
+        2 => 'martes',
+        3 => 'miércoles',
+        4 => 'jueves',
+        5 => 'viernes',
+        6 => 'sábado',
+        7 => 'domingo',
+    ];
+    ?>
+    <h1>Hola, Carlos</h1>
+    <p>Hoy es <strong><?= $weeekDays[date('N')]; ?></strong>. ¿Qué tal estás?</p>
 </body>
 </html>
-
-
-<!-- 
-<?php  
-
-$wdayNumber = getdate()['wday'];
-
-switch($wdayNumber){
-    case (0):
-        $wdayText = "domingo";
-        break;
-    case (1):
-        $wdayText = "lunes";
-        break;
-    case (2):
-        $wdayText = "martes";
-        break;
-    case (3):
-        $wdayText = "miércoles";
-        break;
-    case (4):
-        $wdayText = "jueves";
-        break;
-    case (5):
-        $wdayText = "viernes";
-        break;
-    case (6):
-        $wdayText = "sábado";
-        break;                  
-}
-
-print_r($wdayText);
-?>
- -->
