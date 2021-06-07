@@ -59,8 +59,8 @@ function averageAge2(array $array): float {
 
 //EjercicioReverseTest
 function reverseString(string $input): string {
-
-    return strrev($input);
+    $chars = mb_str_split($input);
+    return implode('', array_reverse($chars));
 }
 
 function reverseWords(string $input): string {
@@ -75,8 +75,10 @@ function reverseWords(string $input): string {
 function reverseCharactersInWords(string $input): string {
 
     $words = explode(" ", $input);
-    $wordsReverse = array_reverse($words);
-    $stringWordsReverse = implode(" ", $wordsReverse);
+    $reversedArray = [];
+    foreach($words as $word) {
+        $reversedArray[] = reverseString($word);
+    }
 
-    return strrev($stringWordsReverse);
+    return implode(' ', $reversedArray);
 }
