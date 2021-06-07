@@ -19,7 +19,12 @@
         7 => 'domingo',
     ];
     ?>
-    <h1>Hola, Carlos</h1>
+
+    <?php include('./navbar.php')?>
+
+    <?php $nombre = $_GET['name'] ?>
+
+    <h1>Hola, <?= $nombre?> </h1>
     <p>Hoy es <strong><?= $weeekDays[date('N')]; ?></strong>. ¿Qué tal estás?</p>
 </body>
 </html>
