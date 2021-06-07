@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<?php include('./partial/head.php')?>
+
 <body>
 
     <?php
@@ -26,5 +22,6 @@
 
     <h1>Hola, <?= $nombre?> </h1>
     <p>Hoy es <strong><?= $weeekDays[date('N')]; ?></strong>. ¿Qué tal estás?</p>
+    <script src="./assets/main.js"></script>
 </body>
 </html>
