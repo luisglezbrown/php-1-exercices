@@ -1,7 +1,12 @@
 <?php 
     require $_SERVER['DOCUMENT_ROOT'].'/lib/app.php'; 
 
-    $stm = $dbConnection->query('SELECT * FROM employees');
+
+    $query = (isset($_GET['id'])) 
+    ? 'SELECT * FROM employees WHERE id='.$_GET['id'] 
+    : 'SELECT * FROM employees';
+
+    $stm = $dbConnection->query($query);
     $people = $stm->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
