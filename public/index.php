@@ -22,6 +22,5 @@
 
     <h1>Hola, <?= $nombre?> </h1>
     <p>Hoy es <strong><?= $weeekDays[date('N')]; ?></strong>. ¿Qué tal estás?</p>
-    <script src="./assets/main.js"></script>
 </body>
 </html>

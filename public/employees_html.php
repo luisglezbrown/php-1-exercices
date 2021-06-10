@@ -14,6 +14,8 @@
                 <th>Email</th>
                 <th>Edad</th>
                 <th>Ciudad</th>
+                <th>Acciones</th>
+
             </tr>
         </thead>
         <tbody>
@@ -24,7 +26,8 @@
                     <td><a href="/employees.php?email=<?= $person['email']?>"><?= $person['email']?></a></td>           
                     <td><?= $person['age']?></td>           
                     <td><?= $person['city']?></td>           
-                </tr>
+                    <td><button class="employees-delete-button" value='Eliminar' data-person='<?= json_encode($person); ?>'>Eliminar</button></td>           
+        </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
@@ -53,6 +56,7 @@
         <input type="submit" value="Enviar"/>
     </form>
 
+    <?php include('./partial/footer.php')?>
 
 </body>
 </html>
