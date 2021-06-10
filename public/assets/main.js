@@ -13,10 +13,10 @@ Array.from(deleteButtons).forEach(element => {
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-            })
-        } else {
-            console.log('no borrar');
+                if(data.status === 'success') {
+                    window.location.replace('/employees.php?message=' + encodeURIComponent(data.message))
+                }
+            });
         }
-    })
+    });
 })

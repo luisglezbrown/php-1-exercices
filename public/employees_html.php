@@ -6,6 +6,10 @@
 
     <?php include('./navbar.php')?>
 
+    <?php if(isset($_GET['message'])) :?>
+        <p><?= $_GET['message']; ?></p>
+    <?php endif; ?>
+
     <table>
         <thead>
             <tr>
@@ -31,11 +35,7 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-
-    <?php if(isset($_GET['message'])) :?>
-        <p><?= $_GET['message']; ?></p>
-    <?php endif; ?>
-    
+ 
     <hr>
     <form method="POST" action="/employees_add.php" enctype="multipart/form-data">
         <label for="name">Nombre</label>
