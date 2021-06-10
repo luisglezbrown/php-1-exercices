@@ -3,27 +3,19 @@
     // Ejercicio: Actualizar los datos del usuario.
 
 require $_SERVER['DOCUMENT_ROOT'].'/lib/app.php';
-$query = 'INSERT INTO `employees` (`name`, `email`, `age`, `city`) VALUES (:nombre, :correo, :edad, :ciudad);';
+$query = 'UPDATE `employees` SET (`id`, `name`, `email`, `age`, `city`) VALUES (:id, :nombre, :correo, :edad, :ciudad) WHERE id = :identificador';
 
 $stm = $dbConnection->prepare($query);
 
-$stm->bindParam(':nombre', $_POST['name']);
-$stm->bindParam(':correo', $_POST['email']);
-$stm->bindParam(':edad', $_POST['age']);
-$stm->bindParam(':ciudad', $_POST['city']);
-
-$stm->execute();
-
-/* Sintaxis alternativa
-
 $params = [
+    ':id' => $_POST['id'],
     ':nombre' => $_POST['name'],
     ':correo' => $_POST['email'],
     ':edad' => $_POST['age'],
     ':ciudad' => $_POST['city'],
 ];
     
-$stm->execute($params); */
+$stm->execute($params);
 
 header('Location: /employees.php?message='. urlencode('El usuario ' . $_POST['email'] . ' se ha añadido correctamente.'));
 
